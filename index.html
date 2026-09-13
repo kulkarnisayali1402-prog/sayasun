@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sayali Kulkarni | Market Intelligence &amp; Commercial Strategy</title>
+<meta name="description" content="Sayali Kulkarni: Market Intelligence &amp; Commercial Strategy in Energy and Industrial Technology.">
+<style>
+  :root{
+    --teal-dark:#0b4d4d;
+    --teal:#0f6b64;
+    --teal-mid:#12807a;
+    --teal-light:#e6f2f1;
+    --cream:#f6f2ea;
+    --ink:#1c2b2a;
+    --muted:#5b6b6a;
+    --line:#dbe6e4;
+    --amber:#c17f2a;
+    --serif:'Source Serif Pro','Georgia',serif;
+    --sans:'Inter',Arial,Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;}
+  h1,h2,h3,h4{font-family:var(--serif);margin:0;color:var(--teal-dark);}
+  a{color:var(--teal-dark);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+  section{padding:90px 0;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* Nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(246,242,234,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;padding:16px 32px;}
+  nav .logo{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--teal-dark);}
+  nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0;}
+  nav a{text-decoration:none;font-size:14px;color:var(--ink);}
+  nav a:hover{color:var(--teal);}
+  nav .cta{background:var(--teal-dark);color:#fff;padding:8px 18px;border-radius:24px;font-size:13.5px;text-decoration:none;}
+  nav .cta:hover{background:var(--teal);}
+
+  /* Hero */
+  .hero{background:linear-gradient(155deg,var(--teal-dark) 0%,var(--teal) 60%,var(--teal-mid) 100%);color:#fff;padding:130px 0 100px;position:relative;overflow:hidden;}
+  .hero .wrap{display:flex;flex-direction:column;gap:22px;position:relative;z-index:2;}
+  .hero .kicker{font-size:14px;letter-spacing:1px;opacity:.85;}
+  .hero h1{font-size:52px;line-height:1.1;color:#fff;max-width:760px;}
+  .hero h1 .sub{display:block;font-size:24px;font-family:var(--sans);font-weight:600;margin-top:14px;opacity:.92;}
+  .hero .statement{font-style:italic;font-size:20px;max-width:600px;line-height:1.6;border-left:3px solid rgba(255,255,255,.55);padding-left:20px;}
+  .hero .also{font-size:13px;opacity:.8;max-width:560px;}
+  .hero .btns{display:flex;gap:14px;margin-top:10px;}
+  .hero .btn{padding:11px 24px;border-radius:26px;font-size:14.5px;font-weight:600;text-decoration:none;}
+  .hero .btn.primary{background:#fff;color:var(--teal-dark);}
+  .hero .btn.ghost{border:1.5px solid rgba(255,255,255,.6);color:#fff;}
+
+  .eyebrow{font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.5px;margin-bottom:10px;}
+  .section-title{font-size:32px;margin-bottom:10px;}
+  .section-sub{color:var(--muted);font-size:15px;max-width:640px;margin-bottom:36px;}
+
+  /* Filterable capabilities */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+  .filter-btn{background:#fff;border:1.5px solid var(--line);color:var(--muted);padding:8px 18px;border-radius:22px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.2s;}
+  .filter-btn:hover{border-color:var(--teal-mid);color:var(--teal-dark);}
+  .filter-btn.active{background:var(--teal-dark);border-color:var(--teal-dark);color:#fff;}
+  .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
+  .cap-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px 28px;transition:.3s;}
+  .cap-card.dim{opacity:.35;}
+  .cap-card h3{font-family:var(--sans);font-size:16px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--teal-mid);}
+  .cap-card ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.9;}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{background:var(--teal-light);color:var(--teal-dark);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;}
+
+  /* Accordion case studies */
+  .case{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:18px;overflow:hidden;}
+  .case-head{padding:28px 32px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:20px;}
+  .case-head:hover{background:#fbf9f4;}
+  .case-head .htext .eyebrow{margin-bottom:6px;}
+  .case-head h3{font-size:22px;}
+  .case-head .desc{color:var(--muted);font-size:13.5px;margin-top:4px;}
+  .case-chevron{font-size:22px;color:var(--teal);transition:transform .3s;flex-shrink:0;}
+  .case.open .case-chevron{transform:rotate(180deg);}
+  .case-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .case.open .case-body{max-height:1400px;}
+  .case-body-inner{padding:0 32px 32px;}
+  .case-flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:8px 0 26px;}
+  .flow-step{background:var(--teal-dark);color:#fff;font-size:12px;font-weight:700;padding:10px 15px;border-radius:8px;}
+  .flow-step.alt{background:var(--teal-mid);}
+  .flow-arrow{color:var(--teal);font-size:15px;}
+  .case-cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .case-cols h4{font-family:var(--sans);font-size:12.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--teal-dark);margin-bottom:8px;}
+  .case-cols ul,.case-cols p{margin:0;font-size:13.5px;line-height:1.75;padding-left:18px;}
+  .case-cols p{padding-left:0;}
+  .insight-box{margin-top:22px;background:var(--teal-light);border-left:4px solid var(--teal);padding:16px 20px;border-radius:6px;font-size:13.5px;line-height:1.7;}
+  .metric-note{display:inline-block;font-size:12px;color:var(--amber);background:#fff6e8;border:1px solid #f0d9a8;padding:6px 12px;border-radius:6px;margin-bottom:18px;}
+
+  /* interactive CAPEX chart */
+  .capex-bars{display:flex;align-items:flex-end;gap:14px;height:170px;margin:10px 0 6px;}
+  .capex-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:pointer;position:relative;}
+  .capex-bar{width:62%;background:linear-gradient(180deg,var(--teal-mid),var(--teal-dark));border-radius:5px 5px 0 0;height:4px;transition:height .8s cubic-bezier(.2,.8,.2,1);}
+  .capex-col .tooltip{position:absolute;bottom:calc(100% + 8px);background:var(--ink);color:#fff;font-size:11px;padding:6px 10px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s;}
+  .capex-col:hover .tooltip{opacity:1;}
+  .capex-col:hover .capex-bar{filter:brightness(1.15);}
+  .capex-label{font-size:11px;color:var(--muted);margin-top:10px;text-align:center;}
+  .capex-source{text-align:center;font-size:11px;color:var(--muted);font-style:italic;margin:8px 0 20px;}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .kpi-row{display:flex;gap:10px;margin:14px 0 18px;}
+  .kpi{flex:1;background:var(--teal-light);border-radius:8px;padding:14px;text-align:center;}
+  .kpi .num{font-size:20px;font-weight:700;color:var(--teal-dark);}
+  .kpi .lbl{font-size:10px;color:var(--muted);}
+  .mini-flow{display:flex;flex-direction:column;gap:10px;margin:14px 0;}
+  .mini-flow div{background:var(--teal-dark);color:#fff;font-size:13px;font-weight:600;padding:11px 15px;border-radius:8px;}
+  .mini-flow div:nth-child(even){background:var(--teal-mid);}
+
+  /* Approach */
+  .approach-row{display:flex;margin-top:20px;}
+  .approach-step{flex:1;text-align:center;padding:0 14px;position:relative;}
+  .approach-circle{width:56px;height:56px;border-radius:50%;background:var(--teal-dark);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;margin:0 auto 14px;transition:.3s;}
+  .approach-step:hover .approach-circle{background:var(--teal-mid);transform:scale(1.08);}
+  .approach-step h4{font-family:var(--sans);font-size:14px;margin-bottom:8px;color:var(--teal-dark);}
+  .approach-step p{font-size:12.5px;color:var(--muted);line-height:1.6;}
+  .approach-line{position:absolute;top:28px;right:-50%;width:100%;height:2px;background:var(--line);z-index:0;}
+
+  /* Projects grid with tabs (primary vs supporting) */
+  .proj-tabs{display:flex;gap:10px;margin-bottom:26px;}
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .proj-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:.25s;}
+  .proj-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(11,77,77,.08);}
+  .proj-card .top{background:var(--teal-dark);color:#fff;font-weight:600;font-size:14.5px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;}
+  .proj-card .tagpill{font-size:10px;font-weight:700;background:rgba(255,255,255,.18);padding:3px 9px;border-radius:12px;}
+  .proj-card .body{padding:15px 18px;font-size:13px;line-height:1.7;color:var(--ink);}
+  .proj-hidden{display:none;}
+
+  /* secondary strength */
+  .secondary{background:#fff;border:1px dashed var(--line);border-radius:12px;padding:28px 32px;margin-top:10px;}
+  .secondary h4{font-size:15px;font-family:var(--sans);color:var(--teal-dark);margin-bottom:10px;}
+  .secondary p{font-size:13.5px;color:var(--muted);margin:0;}
+
+  .contact-strip{background:var(--teal-dark);color:#fff;border-radius:14px;padding:44px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .contact-strip .name{font-size:26px;color:#fff;margin-bottom:6px;}
+  .contact-strip .role{font-size:13px;opacity:.85;}
+  .contact-strip .links{font-size:14px;line-height:2;text-align:right;}
+  .contact-strip a{color:#fff;}
+
+  footer{padding:36px 0;text-align:center;font-size:12.5px;color:var(--muted);}
+
+  /* About section */
+  .about-wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:start;}
+  .avatar{width:220px;height:220px;border-radius:50%;background:linear-gradient(155deg,var(--teal-dark),var(--teal-mid));color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:64px;font-weight:600;}
+  .about-text p{font-size:15px;line-height:1.85;color:var(--ink);}
+  .placeholder{color:var(--amber);font-style:italic;}
+  .pull-quote{margin:70px 0;text-align:center;}
+  .pull-quote p{font-family:var(--serif);font-size:26px;font-style:italic;color:var(--teal-dark);max-width:720px;margin:0 auto;line-height:1.5;}
+  .pull-quote span{display:block;margin-top:14px;font-family:var(--sans);font-size:12.5px;color:var(--muted);font-style:normal;letter-spacing:.5px;}
+  .hobby-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+
+  /* Experience timeline */
+  .timeline{display:flex;flex-direction:column;gap:20px;margin-top:10px;}
+  .tl-item{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 26px;}
+  .tl-logo{flex-shrink:0;width:60px;height:60px;border-radius:10px;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .tl-logo img{width:100%;height:100%;object-fit:contain;padding:8px;}
+  .tl-content{min-width:0;flex:1;}
+  .tl-dates{font-size:12px;color:var(--teal);font-weight:700;letter-spacing:.3px;margin-bottom:4px;}
+  .tl-title{font-family:var(--serif);font-size:19px;color:var(--teal-dark);margin-bottom:2px;}
+  .tl-location{font-size:12.5px;color:var(--muted);margin-bottom:12px;}
+  .tl-item ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.8;}
+
+  @media (max-width:760px){
+    .hero h1{font-size:34px;}
+    .hero h1 .sub{font-size:19px;}
+    .cap-grid,.case-cols,.split,.proj-grid{grid-template-columns:1fr;}
+    .approach-row{flex-direction:column;gap:26px;}
+    .approach-line{display:none;}
+    .contact-strip{flex-direction:column;text-align:center;}
+    .contact-strip .links{text-align:center;}
+    nav ul{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Sayali Kulkarni</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#work">Case Studies</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="cta" href="mailto:sayalikul14@gmail.com">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="kicker">Berlin, Germany · Energy · Industrial Technology · B2B</div>
+    <h1>Market Intelligence &amp; Commercial Strategy<span class="sub">Turning research into commercial decisions in energy and industrial markets</span></h1>
+    <div class="statement">"Turning market, customer and business information into structured insights, commercial analysis and decision-support solutions."</div>
+    <div class="also">Also experienced in business development, opportunity management and sales operations, shown further down as supporting strengths.</div>
+    <div class="btns">
+      <a class="btn primary" href="#work">View case studies</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/sayali-kulkarni14" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">About</div>
+    <h2 class="section-title reveal">About Me</h2>
+    <div class="about-wrap reveal">
+      <div class="avatar" style="overflow:hidden;padding:0;">
+        <img src="assets/profile.jpg" alt="Sayali Kulkarni" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="about-text">
+        <p>I work at the intersection of market research, commercial analysis and business strategy, mainly in energy storage and industrial technology. I like taking scattered information (regulations, competitor moves, cost structures) and turning it into something a business can actually decide on.</p>
+        <p>Outside of work, I paint, dance and love to travel. I find that switching between analytical and creative pursuits keeps me sharp in both.</p>
+        <div class="hobby-row">
+          <span class="tag">Painting</span>
+          <span class="tag">Dance</span>
+          <span class="tag">Travelling</span>
+        </div>
+      </div>
+    </div>
+    <div class="pull-quote reveal">
+      <p>"Turning market, customer and business information into structured insights, commercial analysis and decision-support solutions."</p>
+      <span>SAYALI KULKARNI</span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:#fbf9f4;">
+  <div class="wrap">
+    <div class="eyebrow reveal">Experience</div>
+    <h2 class="section-title reveal">Work History</h2>
+    <p class="section-sub reveal">A quick look at where I've worked and what these companies do.</p>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-logo"><img src="assets/logo_gevernova.jpg" alt="GE Vernova logo" style="object-fit:cover;padding:0;"></div>
+        <div class="tl-content">
+          <div class="tl-dates">SEPT 2025 – PRESENT</div>
+          <div class="tl-title">GE Vernova</div>
+          <div class="tl-location">Working Student, Market Strategy &amp; Commercial Development · Berlin, Germany</div>
+          <p style="font-size:13.5px;line-height:1.75;margin:0;">A global energy technology company spun off from GE, focused on electrification and decarbonization, spanning power generation, grid technology, wind, and energy storage (BESS) solutions for utilities and industrial customers.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-logo"><img src="assets/logo_dbschenker.png" alt="DB Schenker logo"></div>
+        <div class="tl-content">
+          <div class="tl-dates">FEB 2025 – JUL 2025</div>
+          <div class="tl-title">DB Schenker</div>
+          <div class="tl-location">Working Student, Commercial Strategy &amp; Business Development · Frankfurt, Germany</div>
+          <p style="font-size:13.5px;line-height:1.75;margin:0;">One of the world's largest logistics providers, operating across land transport, air and ocean freight, and contract logistics for B2B customers globally.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-logo"><img src="https://logo.clearbit.com/thyssenkrupp.com" alt="Thyssenkrupp Industries India Ltd. logo" onerror="this.parentElement.style.display='none'"></div>
+        <div class="tl-content">
+          <div class="tl-dates">SEPT 2023 – SEPT 2024</div>
+          <div class="tl-title">Thyssenkrupp Industries India Ltd.</div>
+          <div class="tl-location">Business &amp; Market Analysis, Energy Sector · Pune, India</div>
+          <p style="font-size:13.5px;line-height:1.75;margin:0;">The Indian multinational subsidiary of Thyssenkrupp, delivering industrial engineering, automation, and energy solutions across process industries, robotics, and infrastructure projects.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-logo"><img src="assets/logo_addverb.png" alt="Addverb Technologies logo"></div>
+        <div class="tl-content">
+          <div class="tl-dates">AUG 2022 – AUG 2023</div>
+          <div class="tl-title">Addverb Technologies Pvt. Ltd.</div>
+          <div class="tl-location">Project Engineer, Automation · Noida, India</div>
+          <p style="font-size:13.5px;line-height:1.75;margin:0;">A robotics and warehouse-automation company building autonomous mobile robots and material-handling systems for large-scale logistics and manufacturing operations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section id="capabilities">
+  <div class="wrap">
+    <div class="eyebrow reveal">Core Capabilities</div>
+    <h2 class="section-title reveal">What I bring</h2>
+    <p class="section-sub reveal">Filter to see how each area connects to the rest of my work.</p>
+
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="mi">Market Intelligence</button>
+      <button class="filter-btn" data-filter="cs">Commercial Strategy</button>
+      <button class="filter-btn" data-filter="bd">Business Development</button>
+      <button class="filter-btn" data-filter="dd">Data &amp; Digital</button>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card reveal" data-group="mi">
+        <h3>Market Intelligence</h3>
+        <ul><li>Market Research &amp; Analysis</li><li>Competitive Intelligence</li><li>Market Mapping</li><li>Customer &amp; Company Analysis</li><li>Regulatory Research</li><li>Opportunity Identification</li></ul>
+      </div>
+      <div class="cap-card reveal" data-group="cs">
+        <h3>Commercial Strategy</h3>
+        <ul><li>Commercial Analysis</li><li>Pricing &amp; Cost Analysis</li><li>CAPEX Analysis</li><li>Opportunity Assessment</li><li>Win/Loss Analysis</li><li>Business Case Analysis</li></ul>
+      </div>
+      <div class="cap-card reveal" data-group="bd">
+        <h3>Business Development</h3>
+        <ul><li>B2B Opportunity Identification</li><li>Customer Research</li><li>Account Mapping</li><li>Strategic Sales Research</li><li>Proposal Development</li><li>Customer Requirements</li></ul>
+      </div>
+      <div class="cap-card reveal" data-group="dd">
+        <h3>Data &amp; Digital</h3>
+        <ul><li>Advanced Excel</li><li>Power BI (Dashboards &amp; Reporting)</li><li>Dashboard Development</li><li>Data Visualisation</li><li>Salesforce</li><li>AI-enabled Solutions &amp; Process Improvement</li></ul>
+      </div>
+    </div>
+    <div class="cap-card reveal" data-group="mi cs" style="margin-top:22px;">
+      <h3>Energy &amp; Industrial Domain</h3>
+      <div class="tag-row">
+        <span class="tag">BESS / Energy Storage</span><span class="tag">Energy Transition</span><span class="tag">Renewable Energy</span><span class="tag">Industrial Automation</span><span class="tag">B2B Industrial Technology</span><span class="tag">Grid Applications</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES (accordion) -->
+<section id="work" style="background:#fbf9f4;">
+  <div class="wrap">
+    <div class="eyebrow reveal">Case Studies</div>
+    <h2 class="section-title reveal">Selected work</h2>
+    <p class="section-sub reveal">Click a case study to expand it. Each shows the path from problem to strategic implication.</p>
+
+    <div class="case reveal open" data-case>
+      <div class="case-head">
+        <div class="htext">
+          <div class="eyebrow">Case Study 01 · Market Intelligence</div>
+          <h3>European BESS Market Assessment</h3>
+          <div class="desc">Country-level market and regulatory analysis across five European markets.</div>
+        </div>
+        <div class="case-chevron">⌄</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="case-flow">
+            <div class="flow-step">Problem</div><div class="flow-arrow">→</div>
+            <div class="flow-step alt">Research</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Analysis</div><div class="flow-arrow">→</div>
+            <div class="flow-step alt">Insight</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Strategic implication</div>
+          </div>
+          <div class="case-cols">
+            <div>
+              <h4>Problem &amp; Research</h4>
+              <p style="padding-left:0;margin-bottom:10px;">Regulatory environments and BESS use cases vary significantly across European markets, making it difficult to prioritise commercial focus.</p>
+              <ul>
+                <li>Regulatory frameworks compared across Germany, Poland, Netherlands, Romania and Bulgaria</li>
+                <li>Company and market mapping across developers, customers and contractors</li>
+                <li>Competitive landscape research on active market participants</li>
+                <li>Wind + BESS co-location use cases reviewed by country</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Analysis &amp; Insight</h4>
+              <ul>
+                <li>Structured comparison of policy support mechanisms and market maturity</li>
+                <li>Identification of relevant funding and grid-access programmes</li>
+                <li>Benchmarking of competitor positioning by market</li>
+              </ul>
+              <p style="padding-left:0;margin-top:10px;">Markets differ not just in regulation but in the maturity of commercial ecosystems: some favour early entry, others favour partnership-led approaches.</p>
+            </div>
+          </div>
+          <div class="insight-box"><strong>Strategic implication:</strong> A one-size-fits-all market-entry approach underperforms; commercial strategy should be sequenced by regulatory readiness and competitive density, market by market.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal" data-case>
+      <div class="case-head">
+        <div class="htext">
+          <div class="eyebrow">Case Study 02 · Commercial Analysis</div>
+          <h3>BESS Cost &amp; Commercial Analysis</h3>
+          <div class="desc">Illustrative CAPEX cost walk and commercial-evaluation framework for a utility-scale BESS project.</div>
+        </div>
+        <div class="case-chevron">⌄</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="metric-note">Illustrative figures based on publicly available industry cost-share estimates, not actual project data.</div>
+          <div class="capex-bars">
+            <div class="capex-col" data-h="100"><div class="tooltip">~45% of CAPEX</div><div class="capex-bar"></div><div class="capex-label">Battery cells &amp; modules</div></div>
+            <div class="capex-col" data-h="55"><div class="tooltip">~20% of CAPEX</div><div class="capex-bar"></div><div class="capex-label">Power conversion system</div></div>
+            <div class="capex-col" data-h="40"><div class="tooltip">~15% of CAPEX</div><div class="capex-bar"></div><div class="capex-label">Balance of plant</div></div>
+            <div class="capex-col" data-h="27"><div class="tooltip">~10% of CAPEX</div><div class="capex-bar"></div><div class="capex-label">EPC &amp; installation</div></div>
+            <div class="capex-col" data-h="27"><div class="tooltip">~10% of CAPEX</div><div class="capex-bar"></div><div class="capex-label">Grid connection &amp; other</div></div>
+          </div>
+          <div class="capex-source">Hover a bar for detail · illustrative cost-share breakdown, generic to utility-scale BESS projects</div>
+          <div class="case-flow">
+            <div class="flow-step">Cost components</div><div class="flow-arrow">→</div>
+            <div class="flow-step alt">CAPEX structure</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Commercial drivers</div><div class="flow-arrow">→</div>
+            <div class="flow-step alt">Scenario / sensitivity</div><div class="flow-arrow">→</div>
+            <div class="flow-step">Decision support</div>
+          </div>
+          <div class="case-cols">
+            <div><h4>Approach</h4><p style="padding-left:0;">Complex, multi-line BESS costing structures were simplified into a clear component-level breakdown, making cost drivers transparent to non-technical stakeholders.</p></div>
+            <div><h4>Commercial use</h4><p style="padding-left:0;">The resulting cost walk supports opportunity evaluation, business-case discussions and pricing conversations by isolating which cost components most affect competitiveness.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case reveal" data-case>
+      <div class="case-head">
+        <div class="htext">
+          <div class="eyebrow">Case Study 03 &amp; 04 · Data &amp; Digital</div>
+          <h3>Dashboards &amp; AI-Enabled Knowledge Tools</h3>
+          <div class="desc">Turning fragmented data and static references into interactive, decision-ready tools.</div>
+        </div>
+        <div class="case-chevron">⌄</div>
+      </div>
+      <div class="case-body">
+        <div class="case-body-inner">
+          <div class="split">
+            <div>
+              <h4 style="font-size:12.5px;">A. Market / Commercial Dashboard</h4>
+              <div class="kpi-row">
+                <div class="kpi"><div class="num">5</div><div class="lbl">REGIONS TRACKED</div></div>
+                <div class="kpi"><div class="num">3</div><div class="lbl">INDUSTRY VIEWS</div></div>
+                <div class="kpi"><div class="num">↑↓</div><div class="lbl">TREND ANALYSIS</div></div>
+              </div>
+              <p>A market-analysis dashboard consolidating regional growth, revenue mix and market-share data into a single interactive view, built to support fast, visual decision-making rather than static reporting.</p>
+              <div class="tag-row"><span class="tag">KPI Design</span><span class="tag">Trend Analysis</span><span class="tag">Decision Support</span></div>
+            </div>
+            <div>
+              <h4 style="font-size:12.5px;">B. AI-Enabled Knowledge Solution</h4>
+              <div class="mini-flow">
+                <div>Excel-based information</div>
+                <div>Structured knowledge base</div>
+                <div>AI platform integration</div>
+                <div>Faster information retrieval</div>
+              </div>
+              <p>A frequently-used FAQ resource was restructured from a static spreadsheet into a searchable, AI-integrated knowledge tool, reducing reliance on manual lookup for recurring information needs.</p>
+              <div class="tag-row"><span class="tag">AI Integration</span><span class="tag">Knowledge Management</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="eyebrow reveal">Method</div>
+    <h2 class="section-title reveal">How I work</h2>
+    <p class="section-sub reveal">Hover a step. The same method underpins every case study above.</p>
+    <div class="approach-row">
+      <div class="approach-step reveal"><div class="approach-line"></div><div class="approach-circle">1</div><h4>Research</h4><p>Gather relevant market, customer and competitor information from credible sources.</p></div>
+      <div class="approach-step reveal"><div class="approach-line"></div><div class="approach-circle">2</div><h4>Structure</h4><p>Organise fragmented data into consistent, usable formats and frameworks.</p></div>
+      <div class="approach-step reveal"><div class="approach-line"></div><div class="approach-circle">3</div><h4>Analyze</h4><p>Identify patterns, drivers and comparisons that matter to the business question.</p></div>
+      <div class="approach-step reveal"><div class="approach-line"></div><div class="approach-circle">4</div><h4>Visualize</h4><p>Translate analysis into dashboards, frameworks and clear visual narratives.</p></div>
+      <div class="approach-step reveal"><div class="approach-circle">5</div><h4>Recommend</h4><p>Convert insight into practical, decision-ready recommendations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS with tabs including previous portfolio work -->
+<section id="projects" style="background:#fbf9f4;">
+  <div class="wrap">
+    <div class="eyebrow reveal">Portfolio</div>
+    <h2 class="section-title reveal">Projects</h2>
+    <p class="section-sub reveal">Core projects align to the Market Intelligence &amp; Commercial Strategy positioning above. Additional work is included to show range.</p>
+
+    <div class="proj-tabs reveal">
+      <button class="filter-btn active" data-proj="core">Core Projects</button>
+      <button class="filter-btn" data-proj="more">More Work</button>
+    </div>
+
+    <div class="proj-grid" data-proj-group="core">
+      <div class="proj-card reveal"><div class="top">European BESS Market Assessment<span class="tagpill">Market Intel</span></div><div class="body">Regulatory and market comparison across five European countries, identifying commercial entry considerations for utility-scale battery storage.</div></div>
+      <div class="proj-card reveal"><div class="top">BESS Commercial &amp; CAPEX Analysis<span class="tagpill">Commercial</span></div><div class="body">Simplified, component-level cost breakdown used to support commercial evaluation and business-case discussions for BESS opportunities.</div></div>
+      <div class="proj-card reveal"><div class="top">Market Analysis Dashboard<span class="tagpill">Data</span></div><div class="body">Interactive dashboard consolidating regional market data, revenue trends and share analysis into a single decision-support view.<a href="https://www.linkedin.com/posts/sayali-kulkarni14_powerbi-datavisualization-marketanalysis-activity-7280277548251426817-YJoX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAChA0t4BRglThVHVb0oqKjqlv0bkABmWhWs" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--teal-dark);text-decoration:none;">View project &rarr;</a></div></div>
+      <div class="proj-card reveal"><div class="top">AI-Enabled Knowledge Solution<span class="tagpill">Digital</span></div><div class="body">Restructured a static FAQ resource into an AI-integrated knowledge tool to speed up access to frequently needed information.</div></div>
+    </div>
+
+    <div class="proj-grid proj-hidden" data-proj-group="more">
+      <div class="proj-card reveal"><div class="top">Commercial Viability Analysis: BESS in Germany<span class="tagpill">Research</span></div><div class="body">Independent market research assessing the commercial case for utility-scale BESS in Germany, covering installed capacity, pipeline growth and renewables targets.<a href="https://docs.google.com/presentation/d/1mPmJcignjP2SFRwmcw9g93aSSbbvrjKN/edit?slide=id.p1#slide=id.p1" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--teal-dark);text-decoration:none;">View project &rarr;</a></div></div>
+      <div class="proj-card reveal"><div class="top">DCS Market Analysis Dashboard<span class="tagpill">Data</span></div><div class="body">Dashboard analysing distributed control systems market growth by region and industry, including revenue breakdown and market-share visualisation.<a href="https://www.linkedin.com/posts/sayali-kulkarni14_powerbi-datavisualization-marketanalysis-activity-7280277548251426817-YJoX/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAChA0t4BRglThVHVb0oqKjqlv0bkABmWhWs" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--teal-dark);text-decoration:none;">View project &rarr;</a></div></div>
+      <div class="proj-card reveal"><div class="top">RootIQ: Commercial &amp; Market Strategy Case<span class="tagpill">Strategy</span></div><div class="body">Commercial and market strategy case study for RootIQ, an automatic-watering product concept, covering positioning and go-to-market thinking.</div></div>
+      <div class="proj-card reveal"><div class="top">Why Organizations Stay Stuck: Legacy ERP Systems<span class="tagpill">Research</span></div><div class="body">Qualitative primary research (with a co-author, Hochschule Harz) on recurring organisational patterns behind legacy ERP lock-in.<a href="https://drive.google.com/file/d/1YfBm3JSJvI4KBIiw1C6YhkNmslNxHQO8/view?usp=drive_link" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:12.5px;font-weight:600;color:var(--teal-dark);text-decoration:none;">View project &rarr;</a></div></div>
+    </div>
+
+    <div class="secondary reveal" style="margin-top:34px;">
+      <h4>Also experienced in: Business Development &amp; Sales Operations</h4>
+      <p>Opportunity and pipeline management, Salesforce/CRM administration, customer-requirements documentation, and account outreach tracking are supporting strengths that complement the market intelligence and commercial-strategy work above, rather than the primary focus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-strip reveal">
+      <div>
+        <div class="name">Sayali Kulkarni</div>
+        <div class="role">Market Intelligence &amp; Commercial Strategy · Energy &amp; Industrial Technology</div>
+      </div>
+      <div class="links">
+        Berlin, Germany<br>
+        <a href="mailto:sayalikul14@gmail.com">sayalikul14@gmail.com</a><br>
+        <a href="https://www.linkedin.com/in/sayali-kulkarni14" target="_blank" rel="noopener">linkedin.com/in/sayali-kulkarni14</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© Sayali Kulkarni</footer>
+
+<script>
+  // scroll reveal
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); } });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+  // capability filter
+  const filterBtns = document.querySelectorAll('#capabilities .filter-btn');
+  const capCards = document.querySelectorAll('.cap-card');
+  filterBtns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      filterBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      capCards.forEach(card=>{
+        const groups = (card.dataset.group||'').split(' ');
+        if(f==='all' || groups.includes(f)){ card.classList.remove('dim'); }
+        else { card.classList.add('dim'); }
+      });
+    });
+  });
+
+  // accordion case studies
+  document.querySelectorAll('[data-case]').forEach(c=>{
+    c.querySelector('.case-head').addEventListener('click',()=>{
+      c.classList.toggle('open');
+    });
+  });
+
+  // capex bar animation on view
+  const capexObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.querySelectorAll('.capex-col').forEach(col=>{
+          col.querySelector('.capex-bar').style.height = col.dataset.h + 'px';
+        });
+        capexObserver.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  document.querySelectorAll('.capex-bars').forEach(el=>capexObserver.observe(el));
+
+  // project tabs
+  const projTabs = document.querySelectorAll('[data-proj]');
+  projTabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      projTabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const which = tab.dataset.proj;
+      document.querySelectorAll('[data-proj-group]').forEach(g=>{
+        g.classList.toggle('proj-hidden', g.dataset.projGroup !== which);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
